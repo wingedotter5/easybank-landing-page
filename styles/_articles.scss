@@ -1,0 +1,68 @@
+.articles {
+  background: $veryLightGray;
+
+  .info {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @include mobile() {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template: 1fr / repeat(4, 1fr);
+    align-items: baseline;
+    gap: 30px;
+
+    &__item {
+      background: $white;
+      border-radius: 6px;
+      overflow: hidden;
+
+      > img {
+        height: 240px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .content {
+        padding: 1.5rem;
+
+        .author,
+        .text {
+          color: $grayishBlue;
+        }
+
+        .author {
+          margin-bottom: 20px;
+        }
+
+        .text {
+          margin-top: 20px;
+        }
+
+        .title {
+          color: $darkBlue;
+          cursor: pointer;
+
+          &:hover {
+            color: $limeGreen;
+          }
+        }
+      }
+    }
+
+    @include tablet() {
+      grid-template: 1fr 1fr / 1fr 1fr;
+    }
+
+    @include mobile() {
+      grid-template: repeat(4, 1fr) / auto;
+      justify-items: center;
+    }
+  }
+}

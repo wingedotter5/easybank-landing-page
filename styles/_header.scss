@@ -1,0 +1,82 @@
+.header {
+  background: $white;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+
+    #hamburger {
+      display: none;
+      cursor: pointer;
+
+      @include mobile() {
+        display: block;
+      }
+    }
+
+    @include mobile() {
+      #nav-links[data-toggled="yep"] {
+        display: flex;
+      }
+    }
+
+    #nav-links {
+      display: flex;
+      gap: 30px;
+
+      > a {
+        color: $grayishBlue;
+        position: relative;
+
+        &:hover {
+          color: $darkBlue;
+
+          &::after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            inset: 0;
+            top: 48px;
+            background: linear-gradient(to left, $limeGreen, $brightCyan);
+          }
+        }
+      }
+
+      @include mobile() {
+        display: none;
+        position: absolute;
+        z-index: 1e9;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 80px;
+        background: $white;
+        width: 80%;
+        flex-direction: column;
+        border-radius: 6px;
+        padding: 2rem;
+        text-align: center;
+
+        > a {
+          color: $darkBlue;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .invite-btn {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}

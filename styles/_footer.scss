@@ -1,0 +1,92 @@
+.footer {
+  background: $darkBlue;
+
+  .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+
+    @include tablet() {
+      grid-template: auto / auto;
+      gap: 40px;
+    }
+
+    @include mobile() {
+      grid-template: auto / auto;
+      gap: 40px;
+    }
+
+    .social-media-links {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+
+      > div {
+        align-self: end;
+        display: flex;
+        gap: 20px;
+      }
+
+      @include tablet() {
+        grid-template: 1fr 1fr / auto;
+        justify-items: center;
+        gap: 20px;
+      }
+
+      @include mobile() {
+        grid-template: 1fr 1fr / auto;
+        justify-items: center;
+        gap: 20px;
+      }
+    }
+
+    .site-links {
+      display: grid;
+      grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+      align-items: end;
+
+      > a {
+        color: $white;
+
+        &:hover {
+          color: $limeGreen;
+        }
+      }
+
+      @include tablet() {
+        grid-template: auto / auto;
+        justify-items: center;
+        gap: 20px;
+      }
+
+      @include mobile() {
+        grid-template: auto / auto;
+        justify-items: center;
+        gap: 20px;
+      }
+    }
+
+    .copy {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      justify-items: end;
+      align-items: end;
+
+      > div {
+        color: $grayishBlue;
+      }
+
+      @include tablet() {
+        grid-template: auto / auto;
+        justify-items: center;
+        gap: 20px;
+      }
+
+      @include mobile() {
+        grid-template: auto / auto;
+        justify-items: center;
+        gap: 20px;
+      }
+    }
+  }
+}
